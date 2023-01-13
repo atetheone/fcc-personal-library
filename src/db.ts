@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 require("dotenv").config();
 
 mongoose.set('strictQuery', true);
-export const startApp = async (app: Application, port: number) => {
+export const startApp = async (app: Application, port: any) => {
   const mongo_uri = process.env.DB_URI  || "";
   try {
     await mongoose.connect(mongo_uri);
