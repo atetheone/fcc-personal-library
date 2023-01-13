@@ -4,14 +4,14 @@ import { indexRouter } from "./routes";
 import { apiRouter } from "./routes/api";
 require('dotenv').config();
 
-const apiRoutes         = require('./routes/api.js');
-const fccTestingRoutes  = require('./routes/fcctesting.js');
+
+// const fccTestingRoutes  = require('./routes/fcctesting.js');
 
 const app = express();
 
-app.use('/public', express.static(process.cwd() + '/public'));
+app.use('/src/public', express.static(process.cwd() + '/src/public'));
 
-app.use(cors({origin: '*'})); //USED FOR FCC TESTING PURPOSES ONLY!
+app.use(cors()); //USED FOR FCC TESTING PURPOSES ONLY!
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
